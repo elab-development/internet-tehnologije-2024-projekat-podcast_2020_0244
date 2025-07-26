@@ -7,6 +7,9 @@ import PodcastDetails from './Components/PodcastDetails';
 import Favorites from './Components/Favorites';
 import MyPodcasts from './Components/MyPodcasts';
 import CreatePodcast from './Components/CreatePodcast';
+import Creators from './Components/Creators';
+import Categories from './Components/Categories';
+import AddEpisode from './Components/AddEpisode';
 function App() {
   return (
     
@@ -20,6 +23,9 @@ function App() {
            <Route path="/favorites" element={<Favorites />} />
           <Route path="/my-podcasts" element={<MyPodcasts />} />
           <Route path="/create-podcast" element={<CreatePodcast />} />
+             <Route path="/creators" element={<Creators />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/podkast/:podcastId/add-episode" element={<AddEpisode />} />
         </Routes>
       </div>
     </Router>
