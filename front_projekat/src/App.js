@@ -5,6 +5,10 @@ import Register from './Components/Register';
 import Podkast from './Components/Podcasts';
 import Favorites from './Components/Favorites';
 import PodcastDetails from './Components/PodcastDetails';
+import MyPodcasts from './Components/MyPodcasts';
+import CreatePodcast from './Components/CreatePodcast';
+import Creators from './Components/Creators';
+import Categories from './Components/Categories';
 function App() {
   return (
     
@@ -16,6 +20,10 @@ function App() {
            <Route path="/podkasti" element={<Podkast />} />
           <Route path="/podkast/:podcastId" element={<PodcastDetails />} />
           <Route path="/favorites" element={<Favorites />} />
+            <Route path="/my-podcasts" element={<MyPodcasts />} />
+          <Route path="/create-podcast" element={<CreatePodcast />} />
+          <Route path="/creators" element={<Creators />} />
+          <Route path="/categories" element={<Categories />} />
         </Routes>
       </div>
     </Router>
