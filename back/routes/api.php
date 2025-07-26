@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KategorijaController;
+use App\Http\Controllers\EmisijaController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -30,4 +31,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('users/favorites/{id}',[UserController::class,'removeFavorite']);
     Route::get('kategorije',[KategorijaController::class,'index']);
     Route::post('kategorije',[KategorijaController::class,'store']);
+    Route::get('emisije/{id}',[EmisijaController::class,'show']);
+    Route::post('emisije',[EmisijaController::class,'store']);
+
+
 });
