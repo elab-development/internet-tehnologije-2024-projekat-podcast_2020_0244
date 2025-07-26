@@ -12,6 +12,7 @@ import Categories from './Components/Categories';
 import AddEpisode from './Components/AddEpisode';
 import EditPodcast from './Components/EditPodcast';
 import EpisodeDetails from './Components/EpisodeDetails';
+import YouTube from './Components/YouTube';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/podkast/:podcastId/add-episode" element={<AddEpisode />} />
           <Route path="/podkast/:podcastId/edit" element={<EditPodcast />} />
           <Route path="/podkast/:podcastId/episode/:episodeId" element={<EpisodeDetails />} />
+           <Route path="/youtube" element={<YouTube />} />
         </Routes>
       </div>
     </Router>
