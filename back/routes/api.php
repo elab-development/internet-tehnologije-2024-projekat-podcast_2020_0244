@@ -33,6 +33,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('kategorije',[KategorijaController::class,'store']);
     Route::get('emisije/{id}',[EmisijaController::class,'show']);
     Route::post('emisije',[EmisijaController::class,'store']);
-
+    Route::get('/emisije/file/{id}', [EmisijaController::class, 'vratiFile'])->name('emisija.file');
 
 });
