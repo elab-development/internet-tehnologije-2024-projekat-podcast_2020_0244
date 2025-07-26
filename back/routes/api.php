@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\KategorijaController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -28,4 +28,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('users/autori',[UserController::class,'vratiAutore']);
      Route::post('users/favorites/{id}',[UserController::class,'addToFavorites']);
     Route::delete('users/favorites/{id}',[UserController::class,'removeFavorite']);
+    Route::get('kategorije',[KategorijaController::class,'index']);
+    Route::post('kategorije',[KategorijaController::class,'store']);
 });
