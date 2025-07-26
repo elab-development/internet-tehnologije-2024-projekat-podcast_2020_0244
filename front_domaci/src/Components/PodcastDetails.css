@@ -1,0 +1,146 @@
+.podcast-details-page {
+  font-family: "Arial", sans-serif;
+  background-color: #1e1e2e;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.podcast-details-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+  background-color: #29293d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.podcast-details-thumbnail {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+.podcast-details-info {
+  padding: 20px;
+  flex: 1;
+}
+
+.podcast-details-title {
+  font-size: 28px;
+  color: #ff5722;
+}
+
+.podcast-details-description {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.podcast-episodes {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.podcast-episodes h2 {
+  font-size: 24px;
+  color: #ff5722;
+  margin-bottom: 15px;
+}
+
+.episode-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.episode-item {
+  background-color: #333;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.episode-item:hover{
+  transform: scale(1.05);
+}
+
+.episode-number {
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.episode-title {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.episode-duration {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.podcast-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.add-episode {
+  background-color: #ff5722;
+  color: white;
+}
+
+.add-episode:hover {
+  background-color: #e34b1d;
+}
+
+.edit-podcast, .favorite-podcast, .delete-podcast{
+  background-color: #ff5722;
+  color: white;
+}
+
+.edit-podcast:hover {
+  background-color: #e34b1d;
+}
+.delete-podcast:hover {
+  background-color: #e34b1d;
+}
+.favorite-podcast:hover{
+  background-color: #e34b1d;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
