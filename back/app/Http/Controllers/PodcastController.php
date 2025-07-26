@@ -78,6 +78,87 @@ class PodcastController extends Controller
         }
     }
 
+ public function show($id)
+    {
+        try{
+            $podkast = Podcast::findOrFail($id);
+            Log::info($podkast);
+            return new PodcastResource($podkast);
+        }
+        catch (\Exception $e) {
+          
+            return response()->json([
+                'message' => 'Došlo je do greške prilikom dohvatanja podkasta.',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+        
+      
+    }
+
+
+    
+    public function store(Request $request)
+{
+    try {
+      
+   
+        $request->validate([
+            'naslov' => 'required|string',
+            'kratak_sadrzaj' => 'required|string',
+            'kategorija_id' => 'required|exists:kategorije,id',
+            'logo_putanja' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+            'kreatori' => 'required|array',
+            'kreatori.*.id' => 'exists:users,id', 
+        ]);
+
+        $podcast = Podcast::create([
+            'naslov' => $request->naslov,
+            'kratak_sadrzaj' => $request->kratak_sadrzaj,
+            'kategorija_id' => $request->kategorija_id,
+            'logo_putanja' => $this->uploadLogo($request->file('logo_putanja'), $request->naslov),
+
+        ]);
+
+        $kreatori = collect($request->kreatori)->pluck('id');
+        $podcast->autori()->sync($kreatori);
+
+       
+        return response()->json([
+            'message' => 'Podkast je uspešno sačuvan',
+            'podkast' => $podcast,
+        ], 201);
+    } catch (\Exception $e) {
+      
+        return response()->json([
+            'message' => 'Greška prilikom čuvanja podkasta',
+            'error' => $e->getMessage()
+        ], 500);
+    }
+}
+
+
+private function uploadLogo($file, $naslov)
+{
+  
+    $sanitizedNaslov = preg_replace('/[^a-zA-Z0-9_-]/', '_', $naslov);
+    $extension = $file->getClientOriginalExtension();
+    $filename = $sanitizedNaslov . '.' . $extension;
+
+    
+    $path = 'app/' . $sanitizedNaslov;
+
+   
+    if (!Storage::exists($path)) {
+        Storage::makeDirectory($path);
+    }
+
+    $pathFile = $file->storeAs($path, $filename,"public");
+
+    
+    return Storage::url($pathFile);
+}
+
 
   
 }

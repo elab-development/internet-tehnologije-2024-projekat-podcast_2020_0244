@@ -15,7 +15,7 @@ Route::middleware('auth:sanctum')->group(function () {
    
     Route::get('/podcasti',[PodcastController::class,'index']);
     Route::delete('/podcasti/{id}',[PodcastController::class,'destroy']);
-    
-  
+      Route::get('podcasti/{id}',[PodcastController::class,'show']);
+     Route::post('podcasti',[PodcastController::class,'store']);
 
 });
