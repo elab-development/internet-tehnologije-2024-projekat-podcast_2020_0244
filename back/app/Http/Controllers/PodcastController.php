@@ -160,6 +160,50 @@ private function uploadLogo($file, $naslov)
 }
 
 
+
+public function update(Request $request, $podcastId)
+{
+  
+    try {
+        $request->validate([
+            'naslov' => 'required|string',
+            'kratak_sadrzaj' => 'required|string',
+            'kategorija_id' => 'required|exists:kategorije,id',
+            'logo_putanja' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',  
+        ]);
+
+        $podcast = Podcast::findOrFail($podcastId);
+
+       
+        $podcast->naslov = $request->naslov;
+        $podcast->kratak_sadrzaj = $request->kratak_sadrzaj;
+        $podcast->kategorija_id = $request->kategorija_id;
+
+        
+        if ($request->hasFile('logo_putanja')) {
+            if (File::exists($podcast->logo_putanja)) {
+                File::delete($podcast->logo_putanja);
+            }
+           $podcast->logo_putanja =  $this->uploadLogo($request->file('logo_putanja'), $request->naslov);
+
+        }
+
+       
+        $podcast->save();
+
+        return response()->json([
+            'message' => 'Podkast je uspešno izmenjen!',
+            'data' => $podcast
+        ], 200);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'message' => 'Došlo je do greške prilikom ažuriranja podkasta. ' . $e->getMessage()
+        ], 500);
+    }
+}
+
+
   
 }
 
