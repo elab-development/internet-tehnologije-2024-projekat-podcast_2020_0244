@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './AddEpisode.css';
 
 const AddEpisode = () => {
-  const { podcastId } = useParams(); // Dobijanje podcastId iz URL-a
+  const { podcastId } = useParams(); 
   const [episodeTitle, setEpisodeTitle] = useState('');
   const [episodeFile, setEpisodeFile] = useState(null);
   const [message, setMessage] = useState('');
@@ -14,7 +15,7 @@ const AddEpisode = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validacija ako je potrebno
+ 
     if (!episodeTitle || !episodeFile) {
       setMessage('Naziv emisije i fajl su obavezni.');
       return;
@@ -23,7 +24,7 @@ const AddEpisode = () => {
     const formData = new FormData();
     formData.append('naslov', episodeTitle);
     formData.append('file', episodeFile);
-    formData.append('podcast_id', podcastId); // Koristi podcastId iz URL-a
+    formData.append('podcast_id', podcastId);
 
     try {
       const response = await axios.post('http://localhost:8000/api/emisije', formData, {
@@ -37,7 +38,7 @@ const AddEpisode = () => {
       setEpisodeTitle('');
       setEpisodeFile(null);
 
-      // Možete se preusmeriti nazad na stranicu podkasta nakon uspešnog dodavanja
+
       navigate(`/podkast/${podcastId}`);
     } catch (error) {
       console.error('Greška prilikom kreiranja emisije:', error);
@@ -77,6 +78,7 @@ const AddEpisode = () => {
           <button type="submit" className="btn add-episode-btn">Dodaj Emisiju</button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

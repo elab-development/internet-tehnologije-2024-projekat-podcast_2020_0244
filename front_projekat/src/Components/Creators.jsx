@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './Creators.css';
 
 const Creators = () => {
@@ -119,6 +120,7 @@ const Creators = () => {
           </div>
         </div>
       )}
+      <Footer/>
     </div>
   );
 };

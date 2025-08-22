@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {useNavigate  } from 'react-router-dom';
 import axios from 'axios';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './CreatePodcast.css';
 
 const CreatePodcast = () => {
@@ -206,6 +207,7 @@ const CreatePodcast = () => {
           </button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

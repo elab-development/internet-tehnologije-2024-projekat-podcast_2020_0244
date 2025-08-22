@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import useCreators from './UseCreators'; 
+import Footer from  "./Footer";
 import './Favorites.css';
 
 const Favorites = () => {
@@ -84,6 +85,7 @@ const Favorites = () => {
           )}
         </main>
       </div>
+      <Footer/>
     </div>
   );
 };

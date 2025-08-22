@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "./Navigation";
 import useCreators from "./UseCreators";
+import Footer from  "./Footer";
 import "./Creators.css";
 
 const Creators = () => {
@@ -52,6 +53,7 @@ const Creators = () => {
           </div>
         </div>
       )}
+      <Footer/>
     </div>
   );
 };

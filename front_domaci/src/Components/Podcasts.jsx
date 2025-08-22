@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navigation from "./Navigation";
 import { Link } from "react-router-dom";
 import useCreators from "./UseCreators"; 
+import Footer from  "./Footer";
 import "./Podcasts.css";
 
 const Podkast = () => {
@@ -123,6 +124,7 @@ const Podkast = () => {
           </div>
         </main>
       </div>
+      <Footer/>
     </div>
   );
 };

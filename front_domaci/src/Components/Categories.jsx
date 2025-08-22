@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './Categories.css';
 
 const Categories = () => {
@@ -49,6 +50,7 @@ const Categories = () => {
           </button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './Categories.css';
 
 const Categories = () => {
@@ -108,6 +109,7 @@ const Categories = () => {
         </form>
 
       </div>
+      <Footer/>
     </div>
   );
 };

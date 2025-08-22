@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './CreatePodcast.css';
 
 const CreatePodcast = () => {
@@ -100,6 +101,7 @@ const CreatePodcast = () => {
           </button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

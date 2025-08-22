@@ -1,7 +1,10 @@
 import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
+import BackButton from "./BackButton";
 import "./EpisodeDetails.css";
+
 
 const EpisodeDetails = () => {
   
@@ -21,6 +24,7 @@ const EpisodeDetails = () => {
     <div>
       <Navigation/>
       <div className="episode-details-page">
+        <BackButton/>
         <h1>{episode.title}</h1>
         <p>Trajanje: {episode.duration}</p>
         <audio controls>
@@ -28,6 +32,7 @@ const EpisodeDetails = () => {
           Your browser does not support the audio element.
         </audio>
       </div>
+      <Footer/>
     </div>
   );
 };

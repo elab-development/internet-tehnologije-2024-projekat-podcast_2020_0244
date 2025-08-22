@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import "./EpisodeDetails.css";
+import BackButton from './BackButton';
 
 const EpisodeDetails = () => {
   const { podcastId, episodeId } = useParams();
@@ -60,6 +62,7 @@ const EpisodeDetails = () => {
     <div>
       <Navigation role={role} />
       <div className="episode-details-page">
+        <BackButton/>
         <h1>{episode.naslov}</h1>
         <p>Datum: {new Date(episode.datum).toLocaleDateString()}</p>
 
@@ -80,6 +83,7 @@ const EpisodeDetails = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

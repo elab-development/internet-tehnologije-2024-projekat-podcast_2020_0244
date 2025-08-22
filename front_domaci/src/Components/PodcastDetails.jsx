@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navigation from './Navigation';
+import Footer from  "./Footer";
+import BackButton from "./BackButton";
 import "./PodcastDetails.css";
 
 const PodcastDetails = () => {
@@ -74,7 +76,7 @@ const PodcastDetails = () => {
             <p className="podcast-details-description">{podcast.opis}</p>
           </div>
         </div>
-
+        <BackButton/>
         <div className="podcast-episodes">
           <h2>Epizode</h2>
           <ul className="episode-list">
@@ -115,6 +117,7 @@ const PodcastDetails = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

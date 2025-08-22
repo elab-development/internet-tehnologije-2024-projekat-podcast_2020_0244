@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import { Link } from "react-router-dom";
 import './MyPodcasts.css';
 
@@ -79,7 +80,7 @@ const MyPodcasts = () => {
             </button>
           </div>
         </main>
-     
+     <Footer/>
     </div>
   );
 };

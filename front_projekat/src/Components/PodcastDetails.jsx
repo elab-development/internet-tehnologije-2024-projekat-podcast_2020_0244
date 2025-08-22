@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navigation from './Navigation';
+import Footer from  "./Footer";
+import BackButton from "./BackButton";
 import axios from 'axios';
 import "./PodcastDetails.css";
 
@@ -130,7 +132,7 @@ const [userId,setUserId]=useState(window.sessionStorage.getItem('user_id')|| nul
             <p className="podcast-details-description">{podcast.kratak_sadrzaj}</p>
           </div>
         </div>
-
+    <BackButton/>
         <div className="podcast-episodes">
           <h2>Epizode</h2>
           <ul className="episode-list">
@@ -166,6 +168,7 @@ const [userId,setUserId]=useState(window.sessionStorage.getItem('user_id')|| nul
         
         
       </div>
+      <Footer/>
     </div>
   );
 };

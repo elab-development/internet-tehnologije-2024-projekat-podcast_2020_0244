@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from './Navigation'; 
+import Footer from  "./Footer";
 import './Favorites.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -121,6 +122,7 @@ const Favorites = () => {
           </div>
         </main>
       </div>
+      <Footer/>
     </div>
   );
 };

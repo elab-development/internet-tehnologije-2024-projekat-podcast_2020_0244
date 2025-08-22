@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './EditPodcast.css';
 
 const EditPodcast = () => {
@@ -68,6 +69,7 @@ const EditPodcast = () => {
           <button type="submit" className="btn edit-podcast-btn">Izmeni Podkast</button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

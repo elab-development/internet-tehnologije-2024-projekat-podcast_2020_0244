@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from './Navigation';
+import Footer from  "./Footer";
 import './AddEpisode.css';
 
 const AddEpisode = () => {
@@ -45,6 +46,7 @@ const AddEpisode = () => {
           <button type="submit" className="btn add-episode-btn">Dodaj Epizodu</button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

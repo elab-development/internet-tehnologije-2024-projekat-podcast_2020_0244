@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './YouTube.module.css'; 
 import Navigation from './Navigation';
-
+import Footer from  "./Footer";
 const YouTube = () => {
   const [selectedChannelId, setSelectedChannelId] = useState(null);
   const [videos, setVideos] = useState([]);
@@ -119,6 +119,7 @@ const YouTube = () => {
           Next
         </button>
       </div>
+      <Footer/>
     </div>
     </>
     
